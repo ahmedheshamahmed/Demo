@@ -1,0 +1,96 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 20px; /* Add padding around the body */
+}
+
+
+h1, h2 {
+    color: #343a40; /* Darker text color for headings */
+    margin-bottom: 20px; /* Space below headings */
+}
+
+nav {
+    margin-bottom: 20px; /* Space below the navbar */
+}
+
+.card {
+    margin-bottom: 20px; /* Space below each card */
+    border: none; /* Remove default border */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow on hover */
+}
+
+.card-price {
+    font-size: 1.1rem;
+    color: #6c757d; /* Muted color for the price */
+}
+
+.featured-products-section {
+    background-color: #f8f9fa; /* Light grey */
+    padding: 40px 0;
+}
+
+.btn-primary {
+    background-color: #6c757d;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #5a6268;
+}
+
+.card-img-top {
+    height: 200px; /* Set a fixed height for images */
+    object-fit: cover; /* Ensure images cover the area */
+}
+
+footer {
+    background: #4CAF50; /* Same as header for consistency */
+    color: white;
+    padding: 20px; /* Increased padding for footer */
+    margin-top: 20px; /* Space above footer */
+    text-align: center; /* Center footer text */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Space between form fields */
+}
+
+.hero {
+    color: white;
+    padding: 100px 0; /* Adjust for more vertical space */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+}
+
+.hero h1, .hero p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adjust values for desired effect */
+}
+
+
+blockquote {
+    font-style: italic;
+    border-left: 5px solid #4CAF50; /* Green border for the quote */
+    padding-left: 20px;
+}
+
+.container {
+    max-width: 800px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.img-fluid {
+    border-radius: 10px;
+}
+
+

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Macrame Brand</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Link to your CSS -->
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <a class="navbar-brand" href="/">Loomi Macrame</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<header>
+    <h1 class="d-none" th:text="${title}">Welcome to Macrame Brand</h1>
+</header>
+
+<main>
+    <div class="hero text-center text-white"
+         style="position: relative; height: 400px; background-image: url('/images/homepage-img.jpg'); background-size: cover; background-position: center;">
+        <div class="overlay"
+             style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5);"></div>
+        <!-- Semi-transparent overlay -->
+        <div class="container h-100">
+            <div class="row h-100 justify-content-center align-items-center">
+                <div class="col-12">
+                    <h1 class="display-4">Welcome to Our Macrame Wonderland</h1>
+                    <p class="lead">Handcrafted elegance for your home.</p>
+                    <a href="/gallery" class="btn btn-light btn-lg">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="my-5 text-center featured-products-section p-4">
+        <h2>Featured Products</h2>
+        <div class="row">
+            <div class="col-md-4" th:each="product : ${featuredProducts}">
+                <div class="card mb-4 shadow-sm">
+                    <img th:src="${product.imageUrl}" class="card-img-top" alt="${product.name}" style="height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${product.name}">Product Name</h5>
+                        <p class="card-text" th:text="${product.description}">Product description goes here.</p>
+                        <p class="card-price text-muted" th:text="${product.price}">$50.00</p>
+                        <a th:href="@{/product/{id}(id=${product.id})}" class="btn btn-primary">View Details</a>
+                        <form th:action="@{/add-to-cart/{id}(id=${product.id})}" method="post" style="display: inline;">
+                            <button type="submit" class="btn btn-outline-primary ml-2">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="my-5 bg-light p-4">
+        <h2>What Our Customers Say</h2>
+        <blockquote class="blockquote">
+            <p class="mb-0">"I absolutely love my macrame wall hanging! It adds so much character to my living
+                room!"</p>
+            <footer class="blockquote-footer">Customer Name</footer>
+        </blockquote>
+    </section>
+    <section class="my-5 p-4">
+        <h2>About Us</h2>
+        <p>At Loomi, we believe in the beauty of handmade products. Each piece is crafted with love and care, bringing a
+            touch of elegance to your home.</p>
+    </section>
+    <section class="my-5 text-center">
+        <h2>Ready to Transform Your Space?</h2>
+        <a href="/gallery" class="btn btn-primary btn-lg">Browse Our Collection</a>
+    </section>
+</main>
+
+<footer class="text-center my-5">
+    <p>&copy; 2024 Loomi's Macrame Brand</p>
+</footer>
+
+</body>
+</html>

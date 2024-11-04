@@ -27,13 +27,13 @@
             <td>
                 <form th:action="@{/remove-from-cart/{id}(id=${item.productId})}" method="post" style="display: inline;">
                     <button type="submit" class="btn btn-danger btn-sm">Remove</button>
-                    <a href="/gallery" class="btn btn-outline-secondary mt-3">Continue Shopping</a>
                 </form>
             </td>
         </tr>
         </tbody>
     </table>
     <h3>Total: <span th:text="${cart.totalPrice}">$0.00</span></h3>
+    <a href="/gallery" class="btn btn-outline-secondary mt-3">Continue Shopping</a>
 </div>
 </body>
 </html>
